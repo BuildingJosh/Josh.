@@ -8,7 +8,7 @@ const ForceGraph = ({ data, onNodeClick }) => {
 
   useEffect(() => {
     // Set initial node positions in a circle
-    const radius = 200;
+    const radius = 400; // Increased from 200 to spread nodes out more
     const angleStep = (2 * Math.PI) / data.nodes.filter(n => n.level === 0).length;
     let angle = 0;
     
@@ -20,10 +20,10 @@ const ForceGraph = ({ data, onNodeClick }) => {
       }
     });
 
-    // Reheat the simulation
-    fgRef.current.d3Force('charge').strength(-100);
-    fgRef.current.d3Force('link').distance(100);
-    fgRef.current.d3Force('center').strength(0.3);
+    // Reheat the simulation with stronger forces
+    fgRef.current.d3Force('charge').strength(-200); // Increased repulsion
+    fgRef.current.d3Force('link').distance(150); // Increased link distance
+    fgRef.current.d3Force('center').strength(0.2); // Reduced center pull
     fgRef.current.d3ReheatSimulation();
   }, [data.nodes]);
 

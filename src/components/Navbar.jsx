@@ -69,8 +69,15 @@ const Navbar = () => {
   );
 
   return (
-    <AppBar position="fixed" sx={{ backgroundColor: 'rgba(14, 14, 16, 0.95)', backdropFilter: 'blur(8px)' }}>
-      <Toolbar sx={{ pb: 3 }}>
+    <AppBar position="fixed" sx={{ 
+      backgroundColor: 'rgba(14, 14, 16, 0.95)', 
+      backdropFilter: 'blur(8px)',
+      pt: 1 
+    }}>
+      <Toolbar sx={{ 
+        minHeight: { xs: '64px', sm: '72px' },  
+        py: 1  
+      }}>
         {isMobile && (
           <IconButton
             color="inherit"
@@ -92,7 +99,9 @@ const Navbar = () => {
             textDecoration: 'none',
             color: 'inherit',
             fontFamily: '"Space Mono", monospace',
-            mr: 8
+            mr: 8,
+            mt: -1,
+            pt: 1 
           }}
         >
           Josh.

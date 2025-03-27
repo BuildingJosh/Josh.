@@ -16,23 +16,24 @@ const MyMind = () => {
     <Box
       component="div"
       sx={{
-        width: '100vw',
+        width: '100%',
         height: '100vh',
-        position: 'fixed',
-        top: 0,
-        left: 0,
+        position: 'relative',
         backgroundColor: '#0e0e10',
-        overflow: 'hidden',
         display: 'flex',
         flexDirection: 'column',
-        pt: 8
+        pt: 9,
+        overflowY: 'hidden',
+        overflowX: 'visible'
       }}
     >
       <Box
         sx={{
           flex: 1,
-          width: '100%',
-          height: '100%',
+          width: '100vw',
+          minWidth: '150vw', 
+          marginLeft: '-25vw', 
+          height: 'calc(100vh - 72px)',
           position: 'relative'
         }}
       >
@@ -101,7 +102,7 @@ const MyMind = () => {
                     fontFamily: '"Space Mono", monospace'
                   }}
                 >
-                  {selectedNode.description || 'A thought waiting to be explored...'}
+                  {selectedNode.description}
                 </Typography>
               </Box>
             </motion.div>
