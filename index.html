@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Josh Adler — Builder. Thinker. Wanderer.</title>
+    <meta name="description" content="Dive into the personal world of Josh — a roboticist and explorer documenting strange thoughts, mind-bending questions, and global adventures." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+      .custom-cursor {
+        width: 20px;
+        height: 20px;
+        background: rgba(110, 231, 183, 0.2);
+        border-radius: 50%;
+        position: fixed;
+        pointer-events: none;
+        z-index: 9999;
+        backdrop-filter: blur(4px);
+        transition: transform 0.1s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="cursor" class="custom-cursor"></div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      const cursor = document.querySelector('.custom-cursor');
+      document.addEventListener('mousemove', (e) => {
+        cursor.style.transform = `translate(${e.clientX - 10}px, ${e.clientY - 10}px) scale(1)`;
+      });
+      document.addEventListener('mousedown', () => {
+        cursor.style.transform += ' scale(0.8)';
+      });
+      document.addEventListener('mouseup', () => {
+        cursor.style.transform = cursor.style.transform.replace(' scale(0.8)', '');
+      });
+    </script>
+  </body>
+</html>
