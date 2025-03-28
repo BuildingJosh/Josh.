@@ -18,6 +18,7 @@ import { motion } from 'framer-motion';
 const pages = [
   { name: 'Home', path: '/' },
   { name: 'My Mind', path: '/mind' },
+  { name: 'Blog', path: 'https://medium.com/@josh_81820', external: true },
   { name: 'Contact', path: '/contact' }
 ];
 
@@ -25,14 +26,23 @@ const NavLink = ({ item, onClick }) => {
   const location = useLocation();
   const isActive = location.pathname === item.path;
 
+  const LinkComponent = item.external ? 'a' : Link;
+  const linkProps = item.external ? {
+    href: item.path,
+    target: "_blank",
+    rel: "noopener noreferrer"
+  } : {
+    to: item.path,
+    onClick
+  };
+
   return (
     <motion.div
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
     >
-      <Link
-        to={item.path}
-        onClick={onClick}
+      <LinkComponent
+        {...linkProps}
         style={{
           textDecoration: 'none',
           color: isActive ? '#6ee7b7' : 'white',
@@ -43,7 +53,7 @@ const NavLink = ({ item, onClick }) => {
         <Typography variant="button">
           {item.name}
         </Typography>
-      </Link>
+      </LinkComponent>
     </motion.div>
   );
 };

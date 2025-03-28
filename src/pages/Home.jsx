@@ -83,6 +83,24 @@ const Home = () => {
                 Map of My Mind
               </Button>
             </Link>
+            <Button 
+              variant="outlined" 
+              color="primary"
+              component="a"
+              href="https://medium.com/@josh_81820"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{ 
+                borderColor: '#6ee7b7',
+                color: '#6ee7b7',
+                '&:hover': {
+                  borderColor: '#f472b6',
+                  color: '#f472b6'
+                }
+              }}
+            >
+              Read My Blog
+            </Button>
           </Stack>
         </motion.div>
       </Container>
