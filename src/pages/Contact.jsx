@@ -37,7 +37,7 @@ const Contact = () => {
   ];
 
   return (
-    <Container maxWidth="lg" sx={{ pt: 10, pb: 8 }}>
+    <Container maxWidth="lg" sx={{ pt: 15, pb: 8 }}>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -51,7 +51,7 @@ const Contact = () => {
             color: '#6ee7b7',
             textAlign: 'center',
             fontFamily: '"Space Mono", monospace',
-            mb: 6
+            mb: 8
           }}
         >
           Let's Connect
