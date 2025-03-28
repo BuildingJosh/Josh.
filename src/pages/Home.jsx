@@ -1,11 +1,9 @@
 import React from 'react';
-import { Container, Typography, Box, Button, Stack, Link } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
+import { Container, Typography, Box, Button, Stack } from '@mui/material';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const Home = () => {
-  const navigate = useNavigate();
-
   return (
     <Box
       sx={{
@@ -70,13 +68,20 @@ const Home = () => {
             spacing={2}
           >
             <Link to="/mind" style={{ textDecoration: 'none' }}>
-              <Button color="inherit">Map of My Mind</Button>
-            </Link>
-            <Link to="/travel" style={{ textDecoration: 'none' }}>
-              <Button color="inherit">Travel Log</Button>
-            </Link>
-            <Link to="/games" style={{ textDecoration: 'none' }}>
-              <Button color="inherit">Games</Button>
+              <Button 
+                variant="outlined" 
+                color="primary"
+                sx={{ 
+                  borderColor: '#6ee7b7',
+                  color: '#6ee7b7',
+                  '&:hover': {
+                    borderColor: '#f472b6',
+                    color: '#f472b6'
+                  }
+                }}
+              >
+                Map of My Mind
+              </Button>
             </Link>
           </Stack>
         </motion.div>
