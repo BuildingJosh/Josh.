@@ -1,0 +1,4 @@
+pygame==2.5.2
+pymunk==6.6.0
+Flask==3.0.0
+flask-cors==4.0.0

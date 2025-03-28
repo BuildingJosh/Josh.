@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Typography, Box, Button, Stack } from '@mui/material';
+import { Container, Typography, Box, Button, Stack, Link } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
@@ -69,34 +69,15 @@ const Home = () => {
             direction={{ xs: 'column', sm: 'row' }}
             spacing={2}
           >
-            <Button
-              variant="outlined"
-              onClick={() => navigate('/mind')}
-              sx={{
-                borderColor: '#f472b6',
-                color: '#f472b6',
-                '&:hover': {
-                  borderColor: '#f472b6',
-                  backgroundColor: 'rgba(244, 114, 182, 0.1)',
-                },
-              }}
-            >
-              Map of My Mind
-            </Button>
-            <Button
-              variant="outlined"
-              onClick={() => navigate('/travel')}
-              sx={{
-                borderColor: '#6ee7b7',
-                color: '#6ee7b7',
-                '&:hover': {
-                  borderColor: '#6ee7b7',
-                  backgroundColor: 'rgba(110, 231, 183, 0.1)',
-                },
-              }}
-            >
-              Travel Log
-            </Button>
+            <Link to="/mind" style={{ textDecoration: 'none' }}>
+              <Button color="inherit">Map of My Mind</Button>
+            </Link>
+            <Link to="/travel" style={{ textDecoration: 'none' }}>
+              <Button color="inherit">Travel Log</Button>
+            </Link>
+            <Link to="/games" style={{ textDecoration: 'none' }}>
+              <Button color="inherit">Games</Button>
+            </Link>
           </Stack>
         </motion.div>
       </Container>

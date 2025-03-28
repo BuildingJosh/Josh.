@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start-game": "cd public/game && python3 server.py"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -19,6 +20,8 @@
     "3d-force-graph": "^1.77.0",
     "d3": "^7.9.0",
     "d3-force-3d": "^3.0.5",
+    "Flask": "^2.2.2",
+    "Flask-Cors": "^3.0.10",
     "framer-motion": "^12.6.0",
     "gsap": "^3.12.7",
     "react": "^19.0.0",

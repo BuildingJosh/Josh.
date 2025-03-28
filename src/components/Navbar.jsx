@@ -17,7 +17,6 @@ import { motion } from 'framer-motion';
 
 const pages = [
   { name: 'Home', path: '/' },
-  { name: 'Travel', path: '/travel' },
   { name: 'My Mind', path: '/mind' },
   { name: 'Contact', path: '/contact' }
 ];
